@@ -1,0 +1,38 @@
+.checkoutProduct{
+    display:flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid darkgrey;
+    border-top:1px solid darkgrey;
+}
+
+.checkoutproduct_info{
+
+    padding-left: 20px;
+    
+
+
+}
+.checkoutproduct_info> button{
+    background:darkgoldenrod;
+    border:none;
+    width:100px;
+    height:30px;
+    margin-top:30px;
+    border-radius: 5px;
+    
+
+}
+.checkoutproduct_image{
+    object-fit: contain;
+    width:140px;
+    height:140px;
+}
+.checkoutproduct_info > p {
+    padding-top:10px;
+
+}
+.checkoutproduct_rating{
+    display:flex;
+    
+}
