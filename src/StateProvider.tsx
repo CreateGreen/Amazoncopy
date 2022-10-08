@@ -7,12 +7,14 @@ import React, { createContext, useContext, useReducer, Dispatch } from "react";
 export type State = {
   basket: any[];
   user:any;
+  product: any[]
 };
 export type Action = 
 { type: "ADD_TO_BASKET"; item: any }|
 {type:"REMOVE_FROM_BASKET"; id:number}|
 {type:"SET_USER";user:any}|
-{type:"CLEAN_BASKET";}
+{type:"CLEAN_BASKET";}|
+{type:"SET_PRODUCT";pr:any}
 
 type BDispatch = Dispatch<Action>;
 
@@ -53,7 +55,13 @@ export const reducer = (state: State, action: Action): State => {
       return{
         ...state,
         basket:[]
-      }
+      };
+    
+    case "SET_PRODUCT":
+      return{
+        ...state,
+        product:action.pr
+      };
       
 
     default:
@@ -67,6 +75,7 @@ export const StateProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, {
     basket: [],
     user:"",
+    product:[],
   });
   return (
     <StateContext.Provider value={state}>

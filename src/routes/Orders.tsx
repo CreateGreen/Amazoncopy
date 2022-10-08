@@ -3,11 +3,10 @@ import Orderlist from '../components/orders/Orderlist';
 
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
-import { useDispatchValue, useStateValue } from "../StateProvider";
+import { useStateValue } from "../StateProvider";
 
 function Orders() {
   const state = useStateValue();
-  const dispatch = useDispatchValue();
   const [orders,setorders]=useState([{id:"",data:null}]);
 
   useEffect(()=>{

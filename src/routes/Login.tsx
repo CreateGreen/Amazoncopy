@@ -2,6 +2,7 @@ import './Login.css';
 import {Link, useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 import { authservice } from '../firebase';
+import axios from '../axios';
 
 function Login() {
   const [email,setemail]=useState("");
@@ -9,9 +10,17 @@ function Login() {
   const navigate = useNavigate()
   const signin =(e:any)=>{
     e.preventDefault();
-    authservice.signInWithEmailAndPassword(email,pw).then(path=>{
-      navigate('/');
-    }).catch(err=>alert(err.message))
+    axios.post("/login",{email:email,pw:pw}).then((res)=>{
+      console.log(res.data)
+      if(res.data=="success login!"){
+        navigate("/");
+      }else{
+        alert(res.data);
+      }
+    })
+    // authservice.signInWithEmailAndPassword(email,pw).then(path=>{
+    //   navigate('/');
+    // }).catch(err=>alert(err.message))
     
   };
   const register=(e:any)=>{

@@ -15,10 +15,10 @@ const promise = loadStripe("pk_test_51Lmt9qBvutsnmRE50XsnmtkVuRGOOZttoEXtLgVhkmL
 function App() {
   const state=useStateValue();
   const dispatch = useDispatchValue();
-
+//login user 적용이 안됨 server 에서 토큰을 넘겨주면?
   React.useEffect(()=>{
     authservice.onAuthStateChanged(authuser=>{
-      console.log('user: ',authuser)
+      console.log(authuser)
       if(authuser){
         dispatch({
           type:"SET_USER",user:authuser.email

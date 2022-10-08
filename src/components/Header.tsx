@@ -35,7 +35,9 @@ function Header() {
 
         <div className="header_option">
           <span className="header_optionone">안녕하세요!</span>
+          <Link to="/orders" className="header_order">
           <span className="header_optiontwo">주문내역!</span>
+          </Link>
         </div>
 
         <div className="header_option">

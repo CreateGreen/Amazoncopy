@@ -1,6 +1,6 @@
 import React from "react";
 import './Product.css';
-import { useDispatchValue,useStateValue } from '../StateProvider';
+import { useDispatchValue } from '../StateProvider';
 
 interface PropsType{
   id:string,
@@ -14,7 +14,6 @@ interface PropsType{
 
 
 function Product({id, title,image,price,rating}:PropsType) {
-  const state=useStateValue();
   const dispatch = useDispatchValue();
   const Addtobasket =()=>{
     dispatch({
@@ -41,9 +40,9 @@ function Product({id, title,image,price,rating}:PropsType) {
 
         <div className="product_rating">
           {
-            ar.map(()=>{
+            ar.map((a,index)=>{
               return(
-              <p key={id}>★</p>)
+              <p key={index}>★</p>)
             })
           }
         </div>

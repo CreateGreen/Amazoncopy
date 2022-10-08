@@ -59,6 +59,7 @@
 .header_optionbasket{
     display: flex;
     align-items: center;
+    margin-left:10px;
 
 }
 .header_optionline{
@@ -76,6 +77,13 @@
     color: black;
 }
 .header_payment{
+    text-decoration: none;
+    color: black;
+}
+.header_option:hover{
+    border:1px solid black;
+}
+.header_order{
     text-decoration: none;
     color: black;
 }
